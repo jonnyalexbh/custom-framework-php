@@ -2,8 +2,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 $containerBuilder = new \DI\ContainerBuilder;
-$containerBuilder->useAutowiring(true);
-$containerBuilder->addDefinitions(__DIR__ . '../bootstrap/config.php');
+$containerBuilder->useAutowiring(false);
+$containerBuilder->addDefinitions(base_path('bootstrap/config.php'));
 
 // Kint::dump($containerBuilder);
 
