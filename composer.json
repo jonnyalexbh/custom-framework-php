@@ -18,5 +18,13 @@
     "kint-php/kint": "^3.2",
     "symfony/validator": "^4.3",
     "respect/validation": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Application\\": "app/"
+    },
+    "files": [
+      "app/helpers.php"
+    ]
   }
 }
