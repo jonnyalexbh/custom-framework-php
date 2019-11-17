@@ -1,6 +1,7 @@
 <?php
 
 use Application\Controllers\HomeController;
+use Application\Providers\Doctrine;
 
 return [
     'config.database' => function () {
@@ -8,5 +9,8 @@ return [
     },
     HomeController::class => function () {
         return new HomeController;
+    },
+    Doctrine::class => function (\Psr\Container\ContainerInterface $container) {
+      return new Doctrine($container);
     },
 ];
