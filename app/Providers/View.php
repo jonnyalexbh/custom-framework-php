@@ -16,13 +16,13 @@ class View
      */
     public function __construct()
     {
-        $loader = new \Twig_Loader_Filesystem(base_path('resources/views'));
-        $twig = new \Twig_Environment($loader);
+        $loader = new \Twig\Loader\FilesystemLoader(base_path('resources/views'));
+        $twig = new \Twig\Environment($loader);
 
-        $twigFunctions = new \Twig_SimpleFunction(\TwigFunctions::class, function ($method, $params = []) {
+        $twigFunctions = new \Twig\TwigFunction(\TwigFunctions::class, function ($method, $params = []) {
             return TwigFunctions::$method($params);
         });
-        
+
         $twig->addFunction($twigFunctions);
 
         $this->twig = $twig;
